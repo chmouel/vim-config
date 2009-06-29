@@ -1,0 +1,1 @@
+/usr/share/vim-scripts/after/ftplugin/movable_type_snippets.vim

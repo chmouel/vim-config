@@ -1,0 +1,1 @@
+/usr/share/vim-scripts/after/ftplugin/haskell_snippets.vim

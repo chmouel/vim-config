@@ -1,0 +1,1 @@
+/usr/share/vim-scripts/after/ftplugin/logo_snippets.vim

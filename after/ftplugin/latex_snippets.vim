@@ -1,0 +1,1 @@
+/usr/share/vim-scripts/after/ftplugin/latex_snippets.vim

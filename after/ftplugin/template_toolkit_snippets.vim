@@ -1,0 +1,1 @@
+/usr/share/vim-scripts/after/ftplugin/template_toolkit_snippets.vim

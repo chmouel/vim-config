@@ -1,0 +1,1 @@
+/usr/share/vim-scripts/after/ftplugin/markdown_snippets.vim
