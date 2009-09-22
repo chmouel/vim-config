@@ -15,6 +15,7 @@ set spelllang=en_US,fr_FR
 set nocp
 set nohlsearch
 set noincsearch
+set autochdir
 
 set expandtab
 set tw=0
