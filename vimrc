@@ -4,6 +4,7 @@ set modeline
 set background=dark
 set noai
 set wrap
+set nofoldenable
 set ruler
 set hidden
 set showmatch
@@ -66,5 +67,7 @@ map <S-left> :tabprevious<CR>
 highlight Pmenu ctermbg=black ctermfg=white
 highlight PmenuSel ctermfg=cyan
 
-autocmd BufEnter /etc/apache2/sites-available/* setfiletype apache
-autocmd BufEnter /etc/apache2/sites-enabled/* setfiletype apache
+autocmd! BufEnter,BufNewFile /etc/apache2/sites-available/* setfiletype apache
+autocmd! BufEnter,BufNewFile /etc/apache2/sites-enabled/* setfiletype apache
+autocmd!     BufRead,BufNewFile *.json setfiletype json 
+
