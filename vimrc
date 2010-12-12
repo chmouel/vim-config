@@ -16,7 +16,10 @@ set spelllang=en_US,fr_FR
 set nocp
 set nohlsearch
 set noincsearch
-set autochdir
+
+if has("autochdir")
+    set autochdir
+endif
 
 set expandtab
 set tw=0
