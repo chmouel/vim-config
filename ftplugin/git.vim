@@ -47,7 +47,7 @@ function! Git_diff_windows(vertsplit, auto, opts)
     endif
     lcd %:p:h:h
     silent! setlocal ft=diff previewwindow bufhidden=delete nobackup noswf nobuflisted nowrap buftype=nofile
-    exe "normal :r!LANG=C git diff --stat -p --cached ".a:opts."\no\<esc>1GddO\<esc>"
+    i "normal :r!LANG=C git diff --stat -p --cached ".a:opts."\no\<esc>1GddO\<esc>"
     setlocal nomodifiable
     noremap <buffer> q :bw<cr>
     if a:auto
