@@ -70,7 +70,4 @@ map <S-left> :tabprevious<CR>
 highlight Pmenu ctermbg=black ctermfg=white
 highlight PmenuSel ctermfg=cyan
 
-autocmd! BufEnter,BufNewFile /etc/apache2/sites-available/* setfiletype apache
-autocmd! BufEnter,BufNewFile /etc/apache2/sites-enabled/* setfiletype apache
-autocmd!     BufRead,BufNewFile *.json setfiletype json 
 
