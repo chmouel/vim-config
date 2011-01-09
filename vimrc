@@ -70,4 +70,7 @@ map <S-left> :tabprevious<CR>
 highlight Pmenu ctermbg=black ctermfg=white
 highlight PmenuSel ctermfg=cyan
 
-
+if has("gui_running")
+    autocmd FileType gitcommit setlocal previewheight=22
+endif
+autocmd FileType gitcommit DiffGitCached | wincmd w
