@@ -37,6 +37,12 @@ filetype indent on
 map <backspace> <C-u>
 map <space> <C-d>
 
+"Use some easier windows navigation keybindings.
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
 "Use <Leader><Leader> for Control-Meta-L like
 nnoremap <leader><leader> <c-^>
 
