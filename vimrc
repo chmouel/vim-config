@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 syn on
 set paste
 set modeline
@@ -11,7 +13,6 @@ set showmatch
 set showmode
 set nosmartindent
 set nobackup
-set spelllang=en_US,fr_FR 
 
 set nocp
 set nohlsearch
