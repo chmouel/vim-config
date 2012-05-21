@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 call pathogen#infect()
 
-syn on
-set paste
-set modeline
-=======
->>>>>>> 4632b683ed1b16849173ad8bd8075c0f3bf902a8
 set background=dark
 set backspace=2
 set expandtab
@@ -16,6 +10,7 @@ set modeline
 set noautoindent
 set nobackup
 set nocompatible
+set nocp
 set nofoldenable
 set nohlsearch
 set noincsearch
@@ -23,25 +18,16 @@ set nosmartindent
 set paste
 set ruler
 set scrolloff=20
+set shiftwidth=4
 set showmatch
 set showmode
-<<<<<<< HEAD
-set nosmartindent
-set nobackup
-
-set nocp
-set nohlsearch
-set noincsearch
-=======
-set spelllang=en_US,fr_FR 
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-set shiftwidth=4
 set tabstop=4
 set textwidth=0
 set viminfo+=!
 set wrap
->>>>>>> 4632b683ed1b16849173ad8bd8075c0f3bf902a8
 
+syn on
 if has("autochdir")
     set autochdir
 endif
