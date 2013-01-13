@@ -57,6 +57,3 @@ autocmd FileType gitcommit DiffGitCached | wincmd w
 "Gundo
 map <leader>g :GundoToggle<CR>
 
-"minibufexpl
-map <leader>[ :MBEbp<CR>
-map <leader>] :MBEbn<CR>
