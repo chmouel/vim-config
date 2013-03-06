@@ -58,4 +58,3 @@ autocmd FileType gitcommit DiffGitCached | wincmd w
 map <leader>g :GundoToggle<CR>
 
 set wildignore+=*.o,*.obj,.git
-let g:gitgutter_highlights = 0
