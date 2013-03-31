@@ -15,6 +15,7 @@ set nofoldenable
 set nohlsearch
 set noincsearch
 set nosmartindent
+set nostartofline
 set paste
 set ruler
 set scrolloff=20
@@ -45,6 +46,10 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+"map c-up c-down to 5 lines up/down
+map <c-up> 5<C-y>
+map <c-down> 5<C-e>
 
 "Use <Leader><Leader> for Control-Meta-L like
 nnoremap <leader><leader> <c-^>
