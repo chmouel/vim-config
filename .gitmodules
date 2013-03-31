@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/puppet"]
 	path = .vim/bundle/puppet
 	url = git://github.com/rodjek/vim-puppet.git
+[submodule "bundle/vim-expand-region"]
+	path = bundle/vim-expand-region
+	url = https://github.com/terryma/vim-expand-region
