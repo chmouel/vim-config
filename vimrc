@@ -41,11 +41,10 @@ filetype indent on
 map <backspace> <C-u>
 map <space> <C-d>
 
-"Use some easier windows navigation keybindings.
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+"
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
+
 
 "map c-up c-down to 5 lines up/down
 map <c-up> 5<C-y>
