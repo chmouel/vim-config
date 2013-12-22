@@ -11,6 +11,8 @@ en
 let g:loaded_ctrlp = 1
 
 let g:ctrlp_custom_ignore = '\v[\/]?(\.(tox|git|hg|svn|pyc|swp|pyo)|locale)$'
+let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*' " MacOSX/Linux
+let g:ctrlp_mruf_include = '\.py$\|\.rb$'
 
 let [g:ctrlp_lines, g:ctrlp_allfiles, g:ctrlp_alltags, g:ctrlp_alldirs,
 	\ g:ctrlp_allmixes, g:ctrlp_buftags, g:ctrlp_ext_vars, g:ctrlp_builtins]
