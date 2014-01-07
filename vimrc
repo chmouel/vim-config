@@ -56,7 +56,7 @@ nnoremap <leader><leader> <c-^>
 if has("gui_running")
     autocmd FileType gitcommit setlocal previewheight=22
 endif
-autocmd FileType gitcommit DiffGitCached | wincmd w
+autocmd FileType gitcommit DiffGitCached | wincmd J
 
 "Gundo
 map <leader>g :GundoToggle<CR>
