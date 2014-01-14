@@ -61,4 +61,8 @@ autocmd FileType gitcommit DiffGitCached | wincmd w
 "Gundo
 map <leader>g :GundoToggle<CR>
 
+"Ignores
 set wildignore+=*.o,*.obj,.git
+
+" Change colours of line numbers.
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=Grey guibg=NONE
