@@ -53,13 +53,13 @@ map <c-down> 5<C-e>
 "Use <Leader><Leader> for Control-Meta-L like
 nnoremap <leader><leader> <c-^>
 
+"Map \cd to have the buffer in current dir
+nnoremap <leader>cd :lcd %:p:h<CR>
+
 if has("gui_running")
     autocmd FileType gitcommit setlocal previewheight=22
 endif
 autocmd FileType gitcommit DiffGitCached | wincmd J
-
-"Gundo
-map <leader>g :GundoToggle<CR>
 
 "Ignores
 set wildignore+=*.o,*.obj,.git
