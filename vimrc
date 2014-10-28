@@ -53,6 +53,9 @@ map <c-down> 5<C-e>
 "Use <Leader><Leader> for Control-Meta-L like
 nnoremap <leader><leader> <c-^>
 
+nnoremap <leader>o :CtrlP<CR>
+nnoremap <C-f> :CtrlP<CR>
+
 "Map \cd to have the buffer in current dir
 nnoremap <leader>cd :lcd %:p:h<CR>
 
@@ -63,6 +66,13 @@ autocmd FileType gitcommit DiffGitCached | wincmd J
 
 "Ignores
 set wildignore+=*.o,*.obj,.git
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(pyc|exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 " Change colours of line numbers.
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=Grey guibg=NONE
