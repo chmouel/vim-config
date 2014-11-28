@@ -1,3 +1,14 @@
+"Vundle
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
+
+call vundle#end()            " required
+
 set background=dark
 set backspace=2
 set expandtab
