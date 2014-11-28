@@ -1,5 +1,3 @@
-call pathogen#infect()
-
 set background=dark
 set backspace=2
 set expandtab
