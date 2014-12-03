@@ -85,3 +85,7 @@ let g:ctrlp_custom_ignore = {
 
 " Change colours of line numbers.
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=Grey guibg=NONE
+
+
+let local=expand("~/.vimrc.local")
+if filereadable(local) | exe "source " . local | endif
