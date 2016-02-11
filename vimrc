@@ -1,4 +1,13 @@
-call pathogen#infect()
+"Vundle
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
+
+call vundle#end()            " required
 
 set background=dark
 set backspace=2
@@ -76,3 +85,7 @@ let g:ctrlp_custom_ignore = {
 
 " Change colours of line numbers.
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=Grey guibg=NONE
+
+
+let local=expand("~/.vimrc.local")
+if filereadable(local) | exe "source " . local | endif
