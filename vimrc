@@ -27,15 +27,11 @@ set tabstop=4
 set textwidth=0
 set viminfo+=!
 set wrap
+set autochdir
 
 
 "netrw
 let g:netrw_liststyle=3
-
-syn on
-if has("autochdir")
-    set autochdir
-endif
 
 syn on
 filetype plugin on
@@ -64,9 +60,9 @@ nnoremap <C-f> :CtrlP<CR>
 nnoremap <leader>cd :lcd %:p:h<CR>
 
 if has("gui_running")
-    autocmd FileType gitcommit setlocal previewheight=22
+    autocmd FileType gitcommit setlocal previewheight=22 
 endif
-autocmd FileType gitcommit DiffGitCached | wincmd J
+autocmd BufRead COMMIT_EDITMSG cd .. | DiffGitCached | wincmd J
 
 "Ignores
 set wildignore+=*.o,*.obj,.git
