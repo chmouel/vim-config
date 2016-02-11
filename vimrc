@@ -28,6 +28,10 @@ set textwidth=0
 set viminfo+=!
 set wrap
 
+
+"netrw
+let g:netrw_liststyle=3
+
 syn on
 if has("autochdir")
     set autochdir
