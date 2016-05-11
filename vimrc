@@ -7,6 +7,9 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'toggle_comment'
+Plugin 'fatih/vim-go'
+Plugin 'vim-fugitive'
+
 
 call vundle#end()            " required
 
@@ -88,5 +91,5 @@ let g:ctrlp_custom_ignore = {
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=Grey guibg=NONE
 
 
-let local=expand("~/.vimrc.local")
+let local=expand("~/.vim/local.vim")
 if filereadable(local) | exe "source " . local | endif
