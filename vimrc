@@ -8,7 +8,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'toggle_comment'
 Plugin 'fatih/vim-go'
-Plugin 'vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 
 call vundle#end()            " required
