@@ -1,6 +1,16 @@
-set guifont=Inconsolata:h18
-colorscheme default
-set background=light
+if has("unix")
+    if system('uname')=~ 'Darwin'
+        set guifont=Inconsolata:h18
+        colorscheme default
+        set background=light
+    else
+        set guifont=Inconsolata\ 14
+        colorscheme desert
+        set background=dark
+        set guioptions -=T
+        set guioptions -=m
+    endif
+endif
 
 set switchbuf=useopen,usetab
 
