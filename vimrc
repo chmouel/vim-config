@@ -8,8 +8,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'toggle_comment'
 
-call vundle#end()            " required
-
+set noerrorbells 
+set visualbell 
+set t_vb=
 set background=dark
 set backspace=2
 set expandtab
@@ -89,4 +90,5 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 
 
 let local=expand("~/.vim/local.vim")
+call vundle#end()            " required
 if filereadable(local) | exe "source " . local | endif
