@@ -1,15 +1,18 @@
-"Vundle
+""Vundle
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
 Plugin 'toggle_comment'
+Plugin 'tpope/vim-fugitive'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'mhinz/vim-startify'
 
-set noerrorbells 
-set visualbell 
+
+set noerrorbells
+set visualbell
 set t_vb=
 set background=dark
 set backspace=2
@@ -48,10 +51,6 @@ syn on
 filetype plugin on
 filetype indent on
 
-"Less Like view
-map <backspace> <C-u>
-map <space> <C-d>
-
 "
 map <C-J> :bnext<CR>
 map <C-K> :bprev<CR>
@@ -61,33 +60,74 @@ map <C-K> :bprev<CR>
 map <c-up> 5<C-y>
 map <c-down> 5<C-e>
 
+"Have you noticed that both the enter key and the backspace key are basically
+"unused in normal mode. They just go down one line or back one character
+"respectively. Well, we’ve got j and l for that, so let’s rebind them to move
+"a little further (one paragraph):
+nnoremap <BS> {
+onoremap <BS> {
+vnoremap <BS> {
+nnoremap <expr> <CR> empty(&buftype) ? '}' : '<CR>'
+onoremap <expr> <CR> empty(&buftype) ? '}' : '<CR>'
+vnoremap <CR> }
+
+"Less Like view
+map <space> <C-d>
+
 "Use <Leader><Leader> for Control-Meta-L like
 nnoremap <leader><leader> <c-^>
 
-nnoremap <leader>o :CtrlP<CR>
-nnoremap <C-f> :CtrlP<CR>
-
 "Map \cd to have the buffer in current dir
 nnoremap <leader>cd :lcd %:p:h<CR>
-
-if has("gui_running")
-    autocmd FileType gitcommit setlocal previewheight=22 
-endif
 
 "Ignores
 set wildignore+=*.o,*.obj,.git
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(pyc|exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+" GOLANG
+Plugin 'fatih/vim-go'
+let g:go_fmt_command = "goimports"
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+autocmd BufWritePost *.go normal! zv
+au Filetype go nnoremap . :GoDef<CR>
+au FileType go nmap <leader>r <Plug>(go-run)
 
-" Change colours of line numbers.
+" ctrl-p
+Plugin 'kien/ctrlp.vim'
+nnoremap <Leader>o :CtrlPMRUFiles<CR>
+nnoremap <Leader>p :CtrlP<CR>
+let g:ctrlp_mruf_exclude = '.*/tmp/.*\|.*/.git/.*'
+let g:ctrlp_max_files = 200000
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore=vendor --ignore images --ignore svg --ignore fonts -g ""'
+    let g:ctrlp_use_caching = 0
+else
+    let g:ctrlp_clear_cache_on_exit = 0
+endif
+
+" ale syntastic
+Plugin 'dense-analysis/ale'
+let g:ale_linters = {'go': ['gometalinter', 'gofmt']}
+
+" lightline
+Plugin 'itchyny/lightline.vim'
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
+
+"Change colours of line numbers.
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=Grey guibg=NONE
 
-
+"Open local.vim if available
 let local=expand("~/.vim/local.vim")
-call vundle#end()            " required
 if filereadable(local) | exe "source " . local | endif
+call vundle#end()            " required
