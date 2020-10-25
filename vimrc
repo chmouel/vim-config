@@ -9,6 +9,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'mhinz/vim-startify'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'junegunn/gv.vim'
 
 
 set noerrorbells
