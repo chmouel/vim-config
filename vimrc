@@ -4,7 +4,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'toggle_comment'
 Plugin 'tpope/vim-fugitive'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'maxbrunsfeld/vim-yankstack'
@@ -95,6 +94,11 @@ let g:go_highlight_functions = 1
 autocmd BufWritePost *.go normal! zv
 au Filetype go nnoremap . :GoDef<CR>
 au FileType go nmap <leader>r <Plug>(go-run)
+
+"Nerdcommenter
+"Plugin 'preservim/nerdcommenter'
+" Plugin 'toggle_comment'
+Plugin 'tomtom/tcomment_vim'
 
 " ctrl-p
 Plugin 'kien/ctrlp.vim'
