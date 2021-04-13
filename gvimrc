@@ -1,9 +1,9 @@
-set macmeta
 
 autocmd FileType gitcommit setlocal previewheight=22 
 
 if has("unix")
     if system('uname')=~ 'Darwin'
+        set macmeta
         set guifont=Inconsolata:h19
         colorscheme Dark
     else
