@@ -31,7 +31,6 @@ set nohlsearch
 set noincsearch
 set nosmartindent
 set nostartofline
-set paste
 set ruler
 set scrolloff=20
 set shiftwidth=4
