@@ -12,7 +12,6 @@ Plugin 'tpope/vim-rhubarb'
 Plugin 'junegunn/gv.vim'
 Plugin 'chr4/nginx.vim'
 
-
 set noerrorbells
 set visualbell
 set t_vb=
@@ -32,7 +31,6 @@ set nohlsearch
 set noincsearch
 set nosmartindent
 set nostartofline
-set paste
 set ruler
 set scrolloff=20
 set shiftwidth=4
@@ -92,9 +90,12 @@ let g:go_fmt_command = "goimports"
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
+let g:go_auto_type_info = 1
 autocmd BufWritePost *.go normal! zv
 au Filetype go nnoremap . :GoDef<CR>
 au FileType go nmap <leader>r <Plug>(go-run)
+" golang
+au filetype go inoremap <buffer> . .<C-x><C-o>
 
 "Nerdcommenter
 "Plugin 'preservim/nerdcommenter'
@@ -117,6 +118,7 @@ endif
 " ale syntastic
 Plugin 'dense-analysis/ale'
 let g:ale_linters = {'go': ['gometalinter', 'gofmt']}
+
 
 " lightline
 Plugin 'itchyny/lightline.vim'
