@@ -3,13 +3,14 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'mhinz/vim-startify'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'junegunn/gv.vim'
+Plugin 'chr4/nginx.vim'
 
 
 set noerrorbells
