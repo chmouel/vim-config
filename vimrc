@@ -22,7 +22,7 @@ set nocompatible
 set nocp
 set nofoldenable
 set nohlsearch
-set noincsearch
+set incsearch
 set nosmartindent
 set nostartofline
 set ruler
@@ -36,7 +36,6 @@ set textwidth=0
 set viminfo+=!
 set wrap
 set autochdir
-
 
 "netrw
 let g:netrw_liststyle=3
@@ -78,6 +77,9 @@ nnoremap <leader>cd :lcd %:p:h<CR>
 set wildignore+=*.o,*.obj,.git
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
+" Expand Region + -
+Plugin 'terryma/vim-expand-region'
+
 " GOLANG
 Plugin 'fatih/vim-go'
 let g:go_fmt_command = "goimports"
@@ -91,9 +93,7 @@ au FileType go nmap <leader>r <Plug>(go-run)
 " golang
 au filetype go inoremap <buffer> . .<C-x><C-o>
 
-"Nerdcommenter
-"Plugin 'preservim/nerdcommenter'
-" Plugin 'toggle_comment'
+"Commenter gcc
 Plugin 'tomtom/tcomment_vim'
 
 " ctrl-p
@@ -113,8 +113,15 @@ endif
 Plugin 'dense-analysis/ale'
 let g:ale_linters = {'go': ['gometalinter', 'gofmt']}
 
+" Theme
+Plugin 'dracula/vim'
 
-" lightline
+" Buffer switching
+Plugin 'mihaifm/bufstop'
+nnoremap <Leader>b :Bufstop<CR>
+
+
+" Lightligne
 Plugin 'itchyny/lightline.vim'
 let g:lightline = {
       \ 'colorscheme': 'wombat',
@@ -131,6 +138,12 @@ let g:lightline = {
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=Grey guibg=NONE
 
 "Open local.vim if available
-let local=expand("~/.vim/local.vim")
-if filereadable(local) | exe "source " . local | endif
+try
+    source ~/.vim/local.vim
+catch
+endtry
+
 call vundle#end()            " required
+
+"Config after vundle
+colorscheme dracula
