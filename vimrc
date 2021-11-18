@@ -119,13 +119,9 @@ endif
 Plugin 'dense-analysis/ale'
 let g:ale_linters = {'go': ['gometalinter', 'gofmt']}
 
-" Theme
-Plugin 'dracula/vim'
-
 " Buffer switching
 Plugin 'mihaifm/bufstop'
 nnoremap <Leader>b :Bufstop<CR>
-
 
 " Lightligne
 Plugin 'itchyny/lightline.vim'
@@ -150,6 +146,3 @@ catch
 endtry
 
 call vundle#end()            " required
-
-"Config after vundle
-colorscheme dracula
