@@ -115,6 +115,14 @@ else
     let g:ctrlp_clear_cache_on_exit = 0
 endif
 
+Plugin 'kana/vim-fakeclip'
+if !has('gui_running')
+	  " Do not connect to X server.
+	  set clipboard+=exclude:.*
+	  " But I want to use clipboard!
+	  let g:fakeclip_provide_clipboard_key_mappings = 1
+endif
+
 " ale syntastic
 Plugin 'dense-analysis/ale'
 let g:ale_linters = {'go': ['gometalinter', 'gofmt']}
