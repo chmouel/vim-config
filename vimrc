@@ -11,6 +11,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'junegunn/gv.vim'
 Plugin 'chr4/nginx.vim'
+Plugin 'ap/vim-buftabline'
 
 set noerrorbells
 set visualbell
@@ -51,8 +52,8 @@ filetype plugin on
 filetype indent on
 
 "
-map <C-J> :bnext<CR>
-map <C-K> :bprev<CR>
+map <TAB> :bnext<CR>
+map <S-TAB> :bprev<CR>
 
 
 "map c-up c-down to 5 lines up/down
@@ -71,10 +72,10 @@ onoremap <expr> <CR> empty(&buftype) ? '}' : '<CR>'
 vnoremap <CR> }
 
 "Less Like view
-map <space> <C-d>
+let mapleader=" "
 
 "Use <Leader><Leader> for Control-Meta-L like
-nnoremap <leader><leader> <c-^>
+nnoremap <c-l> <c-^>
 
 "Map \cd to have the buffer in current dir
 nnoremap <leader>cd :lcd %:p:h<CR>
@@ -85,6 +86,19 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 " Expand Region + -
 Plugin 'terryma/vim-expand-region'
+
+" Vimtabline
+let g:buftabline_show=1
+nmap <leader>1 <Plug>BufTabLine.Go(1)
+nmap <leader>2 <Plug>BufTabLine.Go(2)
+nmap <leader>3 <Plug>BufTabLine.Go(3)
+nmap <leader>4 <Plug>BufTabLine.Go(4)
+nmap <leader>5 <Plug>BufTabLine.Go(5)
+nmap <leader>6 <Plug>BufTabLine.Go(6)
+nmap <leader>7 <Plug>BufTabLine.Go(7)
+nmap <leader>8 <Plug>BufTabLine.Go(8)
+nmap <leader>9 <Plug>BufTabLine.Go(9)
+nmap <leader>0 <Plug>BufTabLine.Go(10)
 
 " GOLANG
 Plugin 'fatih/vim-go'
@@ -104,8 +118,8 @@ Plugin 'tomtom/tcomment_vim'
 
 " ctrl-p
 Plugin 'kien/ctrlp.vim'
-nnoremap <Leader>o :CtrlPMRUFiles<CR>
-nnoremap <Leader>p :CtrlP<CR>
+nnoremap <Leader><Leader> :CtrlPMRUFiles<CR>
+nnoremap <c-p> :CtrlP<CR>
 let g:ctrlp_mruf_exclude = '.*/tmp/.*\|.*/.git/.*'
 let g:ctrlp_max_files = 200000
 if executable('ag')
@@ -134,7 +148,6 @@ nnoremap <Leader>b :Bufstop<CR>
 " Lightligne
 Plugin 'itchyny/lightline.vim'
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
