@@ -152,4 +152,4 @@ endtry
 call vundle#end()            " required
 
 "Config after vundle
-colorscheme dracula
+"colorscheme dracula
