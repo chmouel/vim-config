@@ -71,11 +71,17 @@ nnoremap <expr> <CR> empty(&buftype) ? '}' : '<CR>'
 onoremap <expr> <CR> empty(&buftype) ? '}' : '<CR>'
 vnoremap <CR> }
 
+"jj=<ESC>
+inoremap jj <Esc>
+
 "Less Like view
 let mapleader=" "
 
 "Use <Leader><Leader> for Control-Meta-L like
 nnoremap <c-l> <c-^>
+
+nnoremap <leader>w <cmd>w<CR>
+nnoremap <leader>q <cmd>x<CR>
 
 "Map \cd to have the buffer in current dir
 nnoremap <leader>cd :lcd %:p:h<CR>
